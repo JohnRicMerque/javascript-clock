@@ -61,9 +61,6 @@ function updateDigitalClock(){
         for (let i = 0; i < ids.length; i++){
             document.getElementById(ids[i]).firstChild.nodeValue = values[i];
         }
-
-
-
 }
 
 function initDigitalClock(){

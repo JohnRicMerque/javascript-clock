@@ -8,20 +8,6 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-header{
-    padding: 1rem 3rem;
-    background-color:rgb(224, 183, 50);
-}
-
-.logo{
-    font-family: 'Josefin Sans', sans-serif;
-    background: -webkit-linear-gradient(125deg,rgb(255, 255, 255),rgb(255, 68, 0));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    font-size: 2rem;
-}
-
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -30,12 +16,24 @@ header{
     background-color:rgb(224, 183, 50);
     grid-template-areas: 
     "header header"
-    "analog digital"
-    "footer footer"
+    "digital analog"
+    "footer ."
 }
 
 .header {
+    font-size: 1.5rem;
+    font-weight: 600;
     grid-area: header;
+    text-transform: uppercase;
+    letter-spacing: 1.2rem;
+    color: rgb(18, 18, 18);
+}
+
+.header span {
+    color: orangered;
+    background: rgb(0, 0, 0);
+    letter-spacing: 0;
+    padding: 1rem;
 }
 
 /* Start Digital Clock */
@@ -48,22 +46,21 @@ header{
 
 .datetime{
     font-family: "Segeo UI", sans-serif;
-    width: 21rem;
+    width: auto;
     padding: 1rem 0.7rem;
-    background: transparent;
     color: rgb(13, 13, 14);
-    border-radius: 0.3rem;
+    border-radius: 1rem;
 }
 
 .date{
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
     letter-spacing: 0.15rem;
 }
 
 .time{
-    font-size: 3.75rem;
+    font-size: 4.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,6 +93,7 @@ header{
     position: relative;
     grid-area: analog;
     filter: drop-shadow(1px 1px 4px);
+    position: sticky;
 }
 
 .clock:hover{
@@ -169,3 +167,15 @@ header{
     border-radius: 10%;
 }
  
+
+
+
+.footer {
+    grid-area: footer;
+    display: flex;
+}
+.footer p:last-child {
+    font-weight: bold;
+    color: rgb(26, 25, 25)
+}
+
