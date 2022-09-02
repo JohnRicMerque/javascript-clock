@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Montserrat:wght@500&family=Ubuntu&display=swap');
 
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -7,8 +8,18 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-body {
-    background-color: rgb(242, 244, 136);
+header{
+    padding: 1rem 3rem;
+    background-color:rgb(224, 183, 50);
+}
+
+.logo{
+    font-family: 'Josefin Sans', sans-serif;
+    background: -webkit-linear-gradient(125deg,rgb(255, 255, 255),rgb(255, 68, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .container {
@@ -16,9 +27,10 @@ body {
     grid-template-columns: 1fr 1fr;
     place-items: center;
     height: 100vh;
+    background-color:rgb(224, 183, 50);
     grid-template-areas: 
     "header header"
-    "digital analog"
+    "analog digital"
     "footer footer"
 }
 
@@ -31,15 +43,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aliceblue;
+    grid-area: digital;
 }
 
 .datetime{
     font-family: "Segeo UI", sans-serif;
-    width: 20rem;
+    width: 21rem;
     padding: 1rem 0.7rem;
-    background: black;
-    border: 0.2rem solid rgb(255, 255, 255);
+    background: transparent;
+    color: rgb(13, 13, 14);
     border-radius: 0.3rem;
 }
 
@@ -71,6 +83,7 @@ body {
     font-weight: 600;
     margin-top: 0.6rem;
     border-radius: 0.15rem;
+    padding: 0.2rem;
 }
 
 /* Start Analog Clock */
@@ -78,11 +91,18 @@ body {
     width: 18rem;
     height: 18rem;
     background-color: rgb(0, 0, 0);
-    border: 0.4rem solid black;
-    border-radius: 50%;
+    border: 0.4rem outset rgb(247, 229, 200);
+    border-radius: 20%;
     position: relative;
     grid-area: analog;
+    filter: drop-shadow(1px 1px 4px);
 }
+
+.clock:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(7px 7px 4px);
+}
+
 
 .clock .number {
     --rotation: 0;
