@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Montserrat:wght@500&family=Ubuntu&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background: linear-gradient(100deg, rgb(255, 178, 0), rgb(255, 203, 66), rgb(255, 244, 207));
+}
+
+.clock {
+    width: 18rem;
+    height: 18rem;
+    background-color: bisque;
+    border: 0.1rem solid black;
+    border-radius: 50%;
+    position: relative;
+}
+
+.clock .number {
+    --rotation: 0;
+    font-size: 1.2rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+}
+
+.clock .number1 { --rotation: 30deg; }
+.clock .number2 { --rotation: 60deg; }
+.clock .number3 { --rotation: 90deg; }
+.clock .number4 { --rotation: 120deg; }
+.clock .number5 { --rotation: 150deg; }
+.clock .number6 { --rotation: 180deg; }
+.clock .number7 { --rotation: 210deg; }
+.clock .number8 { --rotation: 240deg; }
+.clock .number9 { --rotation: 270deg; }
+.clock .number10 { --rotation: 300deg; }
+.clock .number11 { --rotation: 330deg; }
+
+.clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    z-index: 10; 
+}
+
+.clock .hand.second {
+    width: 0.1rem;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .hand.minute {
+    width: 0.2rem;
+    height: 40%;
+    background-color: black;
+}
+
+.clock .hand.hour {
+    width: 0.4rem;
+    height: 30%;
+    background-color: black;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 1rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    border-radius: 10%;
+}
+ 
