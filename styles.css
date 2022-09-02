@@ -49,11 +49,14 @@
     width: auto;
     padding: 1rem 0.7rem;
     color: rgb(13, 13, 14);
-    border-radius: 1rem;
+    position: absolute;
+    width: 50%;
+    background-color: rgb(255, 238, 131);
+    border-right: 1rem black solid;
 }
 
 .date{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
     text-align: center;
     letter-spacing: 0.15rem;
