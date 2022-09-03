@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Montserrat:wght@500&family=Ubuntu&display=swap');
 
+:root {
+    --clr-primary: rgb(249, 193, 9);
+    --clr-secondary: rgb(0, 0, 0);
+    --clr-secondary-light: rgb(13, 13, 14);
+    --clr-accent: orangered;
+}
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -13,7 +19,7 @@
     grid-template-columns: 1fr 1fr;
     place-items: center;
     height: 100vh;
-    background-color:rgb(249, 193, 9);
+    background-color:var(--clr-primary);
     grid-template-areas: 
     "header header"
     "digital analog"
@@ -26,12 +32,12 @@
     grid-area: header;
     text-transform: uppercase;
     letter-spacing: 1.2rem;
-    color: rgb(18, 18, 18);
+    color: var(--clr-secondary-light);
 }
 
 .header span {
-    color: orangered;
-    background: rgb(0, 0, 0);
+    color: var(--clr-accent);
+    background: var(--clr-secondary-light);
     letter-spacing: 0;
     padding: 1rem;
 }
@@ -48,7 +54,7 @@
     font-family: "Segeo UI", sans-serif;
     width: auto;
     padding: 1rem 0.7rem;
-    color: rgb(13, 13, 14);
+    color: var(--clr-secondary-light);
     position: absolute;
     width: 50%;
 }
@@ -76,7 +82,7 @@
 }
 
 .time span:last-child{
-    background: orangered;
+    background: var(--clr-accent);
     font-size: 2rem;
     font-weight: 600;
     margin-top: 0.6rem;
@@ -88,13 +94,12 @@
 .clock {
     width: 18rem;
     height: 18rem;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--clr-secondary);
     border: 0.4rem outset rgb(247, 229, 200);
     border-radius: 20%;
     position: relative;
     grid-area: analog;
     filter: drop-shadow(1px 1px 4px);
-    position: sticky;
 }
 
 .clock:hover{
@@ -178,4 +183,85 @@
     color: rgb(26, 25, 25)
 }
 
-/* insert Jquery */
+/* insert Media query */
+@media only screen and (max-device-width: 600px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "digital"
+        "analog"
+        "footer"
+    }
+
+    .datetime {
+        width: 100%;
+    }
+    
+    .date {
+        font-size: 0.7rem;
+    }
+
+    .time {
+        font-size: 2rem;
+    }
+
+    #period {
+        font-size: 1.5rem;
+        padding: 0.1rem
+    }
+
+    .footer {
+        font-size: 0.7rem;
+    }
+  
+}
+
+@media only screen 
+and (min-device-width : 601px) 
+and (max-device-width: 992px){
+    .date {
+        font-size: 1.5rem;
+    }
+
+    .time {
+        font-size: 4rem;
+    }
+
+    #period {
+        font-size: 2.5rem;
+        padding: 0.2rem
+    }
+
+    .footer {
+        font-size: 1.2rem;
+    }
+  
+}
+
+@media only screen 
+and (min-device-width : 993px) 
+and (max-device-width: 1100px){
+    .container {
+        grid-template-areas: 
+        "header header"
+        "digital analog"
+        "footer footer";
+    }
+    .date {
+        font-size: 1.8rem;
+    }
+
+    .time {
+        font-size: 4.2rem;
+    }
+
+    #period {
+        font-size: 2.7rem;
+        padding: 0.2rem
+    }
+
+    .footer {
+        font-size: 1.4rem;
+    }
+}
