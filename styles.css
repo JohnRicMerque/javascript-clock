@@ -13,7 +13,7 @@
     grid-template-columns: 1fr 1fr;
     place-items: center;
     height: 100vh;
-    background-color:rgb(224, 183, 50);
+    background-color:rgb(249, 193, 9);
     grid-template-areas: 
     "header header"
     "digital analog"
@@ -51,8 +51,6 @@
     color: rgb(13, 13, 14);
     position: absolute;
     width: 50%;
-    background-color: rgb(255, 238, 131);
-    border-right: 1rem black solid;
 }
 
 .date{
@@ -170,9 +168,7 @@
     border-radius: 10%;
 }
  
-
-
-
+/* Start Footer */
 .footer {
     grid-area: footer;
     display: flex;
@@ -182,3 +178,4 @@
     color: rgb(26, 25, 25)
 }
 
+/* insert Jquery */
